@@ -1,0 +1,14 @@
+Running Emperor on Orchestra:
+
+Running Emperor on the Orchestra cluster is very similar to running Emperor and Qiime on the command line. The only major difference is that I started an interactive job, using 
+#bsub -Is …
+
+To familiarize yourself with running Qiime and emperor on the cluster, I recommend running through the qiime tutorial found at http://qiime.org/tutorials/illumina_overview_tutorial.html. The two major outputs that I generated through the tutorial were .html summary tables and the emperor .html file. 
+
+.html outputs on Orchestra can be displayed through the command xdg-open file.html, which opens a firefox browser through the Xquartz/X11 client.
+
+the make_emperor.py command generates a folder that contains an index.html file that, when clicked, creates the 3-d PCoA plots. The cluster does not support WebGL, so the pretty 3d picture cannot be displayed by through the xdg-open command.
+
+Therefore, you need to copy the folder containing the emperor index.html and the emperor required resources to the local machine using the scp command
+''' scp js656@transfer.orchestra.med.harvard.edu from to -r'''
+Then, open the index file on your local machine, and enjoy the results
